@@ -51,4 +51,16 @@ async fn main() {
     time::sleep(time::Duration::from_secs(1)).await;
     assert!(handle1.is_finished());
     assert!(handle2.is_finished());
+
+    let handle3 = tokio::spawn(async {
+        // do some other stuff here
+        time::sleep(time::Duration::from_secs(10)).await;
+    });
+
+    let id = handle3.id();
+    println!("id is: {}", id);
+
+    // this can be used give permission to other task to abort this task
+    // we cant awwit on abort_handler
+    let abort_handler = handle3.abort_handle();
 }
