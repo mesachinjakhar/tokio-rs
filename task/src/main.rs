@@ -9,7 +9,13 @@ async fn main() {
         return 5
     });
 
+    let join = task::spawn(async {
+        panic!("task panic here")
+    });
+
     // handler return Result 
     let result = handler.await; 
-    println!("Result: {}", result.unwrap())// now print works
+    println!("Result: {}", result.unwrap()); // now print works
+
+    assert!(join.await.is_err());
 }
