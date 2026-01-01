@@ -6,7 +6,10 @@ async fn main() {
     let handler = task::spawn(async {
         // this wont print because our main fn returns before this spawn  async task run
         println!("Hello from task");
+        return 5
     });
 
-    handler.await; // now print works
+    // handler return Result 
+    let result = handler.await; 
+    println!("Result: {}", result.unwrap())// now print works
 }
