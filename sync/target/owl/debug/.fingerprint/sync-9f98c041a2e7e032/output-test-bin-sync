@@ -1,44 +1,62 @@
-2026-01-02T07:47:04.849Z INFO  [rustowlc::core] start borrowck of DefId(0:4 ~ sync[83c2]::some_computation)
-2026-01-02T07:47:04.912Z INFO  [rustowlc::core] start borrowck of DefId(0:6 ~ sync[83c2]::some_computation::{closure#0})
-2026-01-02T07:47:04.994Z INFO  [rustowlc::core::analyze] facts of DefId(0:6 ~ sync[83c2]::some_computation::{closure#0}) prepared; start analyze of DefId(0:6 ~ sync[83c2]::some_computation::{closure#0})
-2026-01-02T07:47:04.996Z INFO  [rustowlc::core::analyze] start re-computing borrow check with dump: true
-2026-01-02T07:47:04.997Z INFO  [rustowlc::core] borrow checked: 1 / 7
-2026-01-02T07:47:04.999Z INFO  [rustowlc::core::analyze] facts of DefId(0:4 ~ sync[83c2]::some_computation) prepared; start analyze of DefId(0:4 ~ sync[83c2]::some_computation)
-2026-01-02T07:47:04.999Z INFO  [rustowlc::core] borrow checked: 2 / 7
-2026-01-02T07:47:04.999Z INFO  [rustowlc::core::analyze] start re-computing borrow check with dump: true
-2026-01-02T07:47:05.001Z INFO  [rustowlc::core::analyze] borrow check finished
-2026-01-02T07:47:05.001Z INFO  [rustowlc::core::analyze] borrow check finished
-{"$message_type":"diagnostic","message":"unused variable: `res`","code":{"code":"unused_variables","explanation":null},"level":"warning","spans":[{"file_name":"src/main.rs","byte_start":536,"byte_end":539,"line_start":22,"line_end":22,"column_start":9,"column_end":12,"is_primary":true,"text":[{"text":"    let res = join_handle.await.unwrap();","highlight_start":9,"highlight_end":12}],"label":null,"suggested_replacement":null,"suggestion_applicability":null,"expansion":null}],"children":[{"message":"`#[warn(unused_variables)]` on by default","code":null,"level":"note","spans":[],"children":[],"rendered":null},{"message":"if this is intentional, prefix it with an underscore","code":null,"level":"help","spans":[{"file_name":"src/main.rs","byte_start":536,"byte_end":539,"line_start":22,"line_end":22,"column_start":9,"column_end":12,"is_primary":true,"text":[{"text":"    let res = join_handle.await.unwrap();","highlight_start":9,"highlight_end":12}],"label":null,"suggested_replacement":"_res","suggestion_applicability":"MaybeIncorrect","expansion":null}],"children":[],"rendered":null}],"rendered":"\u001b[0m\u001b[1m\u001b[33mwarning\u001b[0m\u001b[0m\u001b[1m: unused variable: `res`\u001b[0m\n\u001b[0m  \u001b[0m\u001b[0m\u001b[1m\u001b[38;5;12m--> \u001b[0m\u001b[0msrc/main.rs:22:9\u001b[0m\n\u001b[0m   \u001b[0m\u001b[0m\u001b[1m\u001b[38;5;12m|\u001b[0m\n\u001b[0m\u001b[1m\u001b[38;5;12m22\u001b[0m\u001b[0m \u001b[0m\u001b[0m\u001b[1m\u001b[38;5;12m|\u001b[0m\u001b[0m \u001b[0m\u001b[0m    let res = join_handle.await.unwrap();\u001b[0m\n\u001b[0m   \u001b[0m\u001b[0m\u001b[1m\u001b[38;5;12m|\u001b[0m\u001b[0m         \u001b[0m\u001b[0m\u001b[1m\u001b[33m^^^\u001b[0m\u001b[0m \u001b[0m\u001b[0m\u001b[1m\u001b[33mhelp: if this is intentional, prefix it with an underscore: `_res`\u001b[0m\n\u001b[0m   \u001b[0m\u001b[0m\u001b[1m\u001b[38;5;12m|\u001b[0m\n\u001b[0m   \u001b[0m\u001b[0m\u001b[1m\u001b[38;5;12m= \u001b[0m\u001b[0m\u001b[1mnote\u001b[0m\u001b[0m: `#[warn(unused_variables)]` on by default\u001b[0m\n\n"}
-2026-01-02T07:47:05.039Z INFO  [rustowlc::core] start borrowck of DefId(0:7 ~ sync[83c2]::main)
-2026-01-02T07:47:05.039Z INFO  [rustowlc::core] start borrowck of DefId(0:8 ~ sync[83c2]::main::{closure#0})
-2026-01-02T07:47:05.044Z INFO  [rustowlc::core] start borrowck of DefId(0:9 ~ sync[83c2]::main::{closure#0}::{closure#0})
-2026-01-02T07:47:05.052Z INFO  [rustowlc::core::analyze] facts of DefId(0:9 ~ sync[83c2]::main::{closure#0}::{closure#0}) prepared; start analyze of DefId(0:9 ~ sync[83c2]::main::{closure#0}::{closure#0})
-2026-01-02T07:47:05.053Z INFO  [rustowlc::core] borrow checked: 3 / 7
-2026-01-02T07:47:05.053Z INFO  [rustowlc::core::analyze] start re-computing borrow check with dump: true
-2026-01-02T07:47:05.053Z INFO  [rustowlc::core] start borrowck of DefId(0:10 ~ sync[83c2]::main::{closure#0}::{closure#1})
-2026-01-02T07:47:05.054Z INFO  [rustowlc::core::analyze] facts of DefId(0:10 ~ sync[83c2]::main::{closure#0}::{closure#1}) prepared; start analyze of DefId(0:10 ~ sync[83c2]::main::{closure#0}::{closure#1})
-2026-01-02T07:47:05.054Z INFO  [rustowlc::core] borrow checked: 4 / 7
-2026-01-02T07:47:05.054Z INFO  [rustowlc::core::analyze] start re-computing borrow check with dump: true
-2026-01-02T07:47:05.058Z INFO  [rustowlc::core::analyze] borrow check finished
-2026-01-02T07:47:05.059Z INFO  [rustowlc::core::analyze] borrow check finished
-2026-01-02T07:47:05.068Z INFO  [rustowlc::core::analyze] facts of DefId(0:8 ~ sync[83c2]::main::{closure#0}) prepared; start analyze of DefId(0:8 ~ sync[83c2]::main::{closure#0})
-2026-01-02T07:47:05.068Z INFO  [rustowlc::core] borrow checked: 5 / 7
-2026-01-02T07:47:05.068Z INFO  [rustowlc::core::analyze] start re-computing borrow check with dump: true
-2026-01-02T07:47:05.089Z INFO  [rustowlc::core::analyze] facts of DefId(0:7 ~ sync[83c2]::main) prepared; start analyze of DefId(0:7 ~ sync[83c2]::main)
-2026-01-02T07:47:05.089Z INFO  [rustowlc::core] borrow checked: 6 / 7
-2026-01-02T07:47:05.089Z INFO  [rustowlc::core::analyze] start re-computing borrow check with dump: true
-2026-01-02T07:47:05.090Z INFO  [rustowlc::core] start borrowck of DefId(0:11 ~ sync[83c2]::main#1)
-2026-01-02T07:47:05.090Z INFO  [rustowlc::core::analyze] facts of DefId(0:11 ~ sync[83c2]::main#1) prepared; start analyze of DefId(0:11 ~ sync[83c2]::main#1)
-2026-01-02T07:47:05.090Z INFO  [rustowlc::core] borrow checked: 7 / 7
-2026-01-02T07:47:05.090Z INFO  [rustowlc::core::analyze] start re-computing borrow check with dump: true
-2026-01-02T07:47:05.090Z INFO  [rustowlc::core::analyze] borrow check finished
-2026-01-02T07:47:05.090Z INFO  [rustowlc::core::analyze] borrow check finished
-2026-01-02T07:47:05.099Z INFO  [rustowlc::core::analyze] borrow check finished
-2026-01-02T07:47:05.172Z INFO  [rustowlc::core] analyzed one item of /Users/sachien/Desktop/tokio-rs/sync/src/main.rs
-2026-01-02T07:47:05.172Z INFO  [rustowlc::core] analyzed one item of /Users/sachien/Desktop/tokio-rs/sync/src/main.rs
-2026-01-02T07:47:05.175Z INFO  [rustowlc::core] analyzed one item of /Users/sachien/Desktop/tokio-rs/sync/src/main.rs
-2026-01-02T07:47:05.177Z INFO  [rustowlc::core] analyzed one item of /Users/sachien/Desktop/tokio-rs/sync/src/main.rs
-2026-01-02T07:47:05.177Z INFO  [rustowlc::core] analyzed one item of /Users/sachien/Desktop/tokio-rs/sync/src/main.rs
-2026-01-02T07:47:05.178Z INFO  [rustowlc::core] analyzed one item of /Users/sachien/Desktop/tokio-rs/sync/src/main.rs
-2026-01-02T07:47:05.188Z INFO  [rustowlc::core] analyzed one item of /Users/sachien/Desktop/tokio-rs/sync/src/main.rs
+2026-01-02T07:57:14.808Z INFO  [rustowlc::core] start borrowck of DefId(0:5 ~ sync[83c2]::some_computation2)
+2026-01-02T07:57:14.868Z INFO  [rustowlc::core] start borrowck of DefId(0:7 ~ sync[83c2]::some_computation2::{closure#0})
+2026-01-02T07:57:14.938Z INFO  [rustowlc::core::analyze] facts of DefId(0:7 ~ sync[83c2]::some_computation2::{closure#0}) prepared; start analyze of DefId(0:7 ~ sync[83c2]::some_computation2::{closure#0})
+2026-01-02T07:57:14.940Z INFO  [rustowlc::core::analyze] start re-computing borrow check with dump: true
+2026-01-02T07:57:14.940Z INFO  [rustowlc::core] borrow checked: 1 / 10
+2026-01-02T07:57:14.942Z INFO  [rustowlc::core::analyze] facts of DefId(0:5 ~ sync[83c2]::some_computation2) prepared; start analyze of DefId(0:5 ~ sync[83c2]::some_computation2)
+2026-01-02T07:57:14.942Z INFO  [rustowlc::core] borrow checked: 2 / 10
+2026-01-02T07:57:14.942Z INFO  [rustowlc::core::analyze] start re-computing borrow check with dump: true
+2026-01-02T07:57:14.943Z INFO  [rustowlc::core::analyze] borrow check finished
+2026-01-02T07:57:14.945Z INFO  [rustowlc::core::analyze] borrow check finished
+2026-01-02T07:57:14.949Z INFO  [rustowlc::core] start borrowck of DefId(0:8 ~ sync[83c2]::some_computation)
+2026-01-02T07:57:14.949Z INFO  [rustowlc::core] start borrowck of DefId(0:10 ~ sync[83c2]::some_computation::{closure#0})
+2026-01-02T07:57:14.949Z INFO  [rustowlc::core::analyze] facts of DefId(0:10 ~ sync[83c2]::some_computation::{closure#0}) prepared; start analyze of DefId(0:10 ~ sync[83c2]::some_computation::{closure#0})
+2026-01-02T07:57:14.949Z INFO  [rustowlc::core] borrow checked: 3 / 10
+2026-01-02T07:57:14.949Z INFO  [rustowlc::core::analyze] start re-computing borrow check with dump: true
+2026-01-02T07:57:14.949Z INFO  [rustowlc::core::analyze] facts of DefId(0:8 ~ sync[83c2]::some_computation) prepared; start analyze of DefId(0:8 ~ sync[83c2]::some_computation)
+2026-01-02T07:57:14.949Z INFO  [rustowlc::core] borrow checked: 4 / 10
+2026-01-02T07:57:14.949Z INFO  [rustowlc::core::analyze] borrow check finished
+2026-01-02T07:57:14.949Z INFO  [rustowlc::core::analyze] start re-computing borrow check with dump: true
+2026-01-02T07:57:14.950Z INFO  [rustowlc::core::analyze] borrow check finished
+{"$message_type":"diagnostic","message":"unused variable: `res`","code":{"code":"unused_variables","explanation":null},"level":"warning","spans":[{"file_name":"src/main.rs","byte_start":559,"byte_end":562,"line_start":23,"line_end":23,"column_start":9,"column_end":12,"is_primary":true,"text":[{"text":"    let res = join_handle.await.unwrap();","highlight_start":9,"highlight_end":12}],"label":null,"suggested_replacement":null,"suggestion_applicability":null,"expansion":null}],"children":[{"message":"`#[warn(unused_variables)]` on by default","code":null,"level":"note","spans":[],"children":[],"rendered":null},{"message":"if this is intentional, prefix it with an underscore","code":null,"level":"help","spans":[{"file_name":"src/main.rs","byte_start":559,"byte_end":562,"line_start":23,"line_end":23,"column_start":9,"column_end":12,"is_primary":true,"text":[{"text":"    let res = join_handle.await.unwrap();","highlight_start":9,"highlight_end":12}],"label":null,"suggested_replacement":"_res","suggestion_applicability":"MaybeIncorrect","expansion":null}],"children":[],"rendered":null}],"rendered":"\u001b[0m\u001b[1m\u001b[33mwarning\u001b[0m\u001b[0m\u001b[1m: unused variable: `res`\u001b[0m\n\u001b[0m  \u001b[0m\u001b[0m\u001b[1m\u001b[38;5;12m--> \u001b[0m\u001b[0msrc/main.rs:23:9\u001b[0m\n\u001b[0m   \u001b[0m\u001b[0m\u001b[1m\u001b[38;5;12m|\u001b[0m\n\u001b[0m\u001b[1m\u001b[38;5;12m23\u001b[0m\u001b[0m \u001b[0m\u001b[0m\u001b[1m\u001b[38;5;12m|\u001b[0m\u001b[0m \u001b[0m\u001b[0m    let res = join_handle.await.unwrap();\u001b[0m\n\u001b[0m   \u001b[0m\u001b[0m\u001b[1m\u001b[38;5;12m|\u001b[0m\u001b[0m         \u001b[0m\u001b[0m\u001b[1m\u001b[33m^^^\u001b[0m\u001b[0m \u001b[0m\u001b[0m\u001b[1m\u001b[33mhelp: if this is intentional, prefix it with an underscore: `_res`\u001b[0m\n\u001b[0m   \u001b[0m\u001b[0m\u001b[1m\u001b[38;5;12m|\u001b[0m\n\u001b[0m   \u001b[0m\u001b[0m\u001b[1m\u001b[38;5;12m= \u001b[0m\u001b[0m\u001b[1mnote\u001b[0m\u001b[0m: `#[warn(unused_variables)]` on by default\u001b[0m\n\n"}
+2026-01-02T07:57:14.979Z INFO  [rustowlc::core] start borrowck of DefId(0:11 ~ sync[83c2]::main)
+2026-01-02T07:57:14.980Z INFO  [rustowlc::core] start borrowck of DefId(0:12 ~ sync[83c2]::main::{closure#0})
+2026-01-02T07:57:14.983Z INFO  [rustowlc::core] start borrowck of DefId(0:13 ~ sync[83c2]::main::{closure#0}::{closure#0})
+2026-01-02T07:57:14.986Z INFO  [rustowlc::core::analyze] facts of DefId(0:13 ~ sync[83c2]::main::{closure#0}::{closure#0}) prepared; start analyze of DefId(0:13 ~ sync[83c2]::main::{closure#0}::{closure#0})
+2026-01-02T07:57:14.986Z INFO  [rustowlc::core] borrow checked: 5 / 10
+2026-01-02T07:57:14.986Z INFO  [rustowlc::core::analyze] start re-computing borrow check with dump: true
+2026-01-02T07:57:14.986Z INFO  [rustowlc::core] start borrowck of DefId(0:14 ~ sync[83c2]::main::{closure#0}::{closure#1})
+2026-01-02T07:57:14.987Z INFO  [rustowlc::core::analyze] facts of DefId(0:14 ~ sync[83c2]::main::{closure#0}::{closure#1}) prepared; start analyze of DefId(0:14 ~ sync[83c2]::main::{closure#0}::{closure#1})
+2026-01-02T07:57:14.988Z INFO  [rustowlc::core] borrow checked: 6 / 10
+2026-01-02T07:57:14.988Z INFO  [rustowlc::core::analyze] start re-computing borrow check with dump: true
+2026-01-02T07:57:14.988Z INFO  [rustowlc::core] start borrowck of DefId(0:15 ~ sync[83c2]::main::{closure#0}::{closure#2})
+2026-01-02T07:57:14.991Z INFO  [rustowlc::core::analyze] borrow check finished
+2026-01-02T07:57:14.995Z INFO  [rustowlc::core::analyze] borrow check finished
+2026-01-02T07:57:15.004Z INFO  [rustowlc::core::analyze] facts of DefId(0:15 ~ sync[83c2]::main::{closure#0}::{closure#2}) prepared; start analyze of DefId(0:15 ~ sync[83c2]::main::{closure#0}::{closure#2})
+2026-01-02T07:57:15.005Z INFO  [rustowlc::core] borrow checked: 7 / 10
+2026-01-02T07:57:15.005Z INFO  [rustowlc::core::analyze] start re-computing borrow check with dump: true
+2026-01-02T07:57:15.029Z INFO  [rustowlc::core::analyze] borrow check finished
+2026-01-02T07:57:15.054Z INFO  [rustowlc::core::analyze] facts of DefId(0:12 ~ sync[83c2]::main::{closure#0}) prepared; start analyze of DefId(0:12 ~ sync[83c2]::main::{closure#0})
+2026-01-02T07:57:15.055Z INFO  [rustowlc::core] borrow checked: 8 / 10
+2026-01-02T07:57:15.055Z INFO  [rustowlc::core::analyze] start re-computing borrow check with dump: true
+2026-01-02T07:57:15.058Z INFO  [rustowlc::core::analyze] facts of DefId(0:11 ~ sync[83c2]::main) prepared; start analyze of DefId(0:11 ~ sync[83c2]::main)
+2026-01-02T07:57:15.059Z INFO  [rustowlc::core] borrow checked: 9 / 10
+2026-01-02T07:57:15.059Z INFO  [rustowlc::core::analyze] start re-computing borrow check with dump: true
+2026-01-02T07:57:15.059Z INFO  [rustowlc::core] start borrowck of DefId(0:16 ~ sync[83c2]::main#1)
+2026-01-02T07:57:15.060Z INFO  [rustowlc::core::analyze] facts of DefId(0:16 ~ sync[83c2]::main#1) prepared; start analyze of DefId(0:16 ~ sync[83c2]::main#1)
+2026-01-02T07:57:15.060Z INFO  [rustowlc::core] borrow checked: 10 / 10
+2026-01-02T07:57:15.060Z INFO  [rustowlc::core::analyze] start re-computing borrow check with dump: true
+2026-01-02T07:57:15.060Z INFO  [rustowlc::core::analyze] borrow check finished
+2026-01-02T07:57:15.060Z INFO  [rustowlc::core::analyze] borrow check finished
+2026-01-02T07:57:15.141Z INFO  [rustowlc::core::analyze] borrow check finished
+2026-01-02T07:57:15.144Z INFO  [rustowlc::core] analyzed one item of /Users/sachien/Desktop/tokio-rs/sync/src/main.rs
+2026-01-02T07:57:15.147Z INFO  [rustowlc::core] analyzed one item of /Users/sachien/Desktop/tokio-rs/sync/src/main.rs
+2026-01-02T07:57:15.148Z INFO  [rustowlc::core] analyzed one item of /Users/sachien/Desktop/tokio-rs/sync/src/main.rs
+2026-01-02T07:57:15.148Z INFO  [rustowlc::core] analyzed one item of /Users/sachien/Desktop/tokio-rs/sync/src/main.rs
+2026-01-02T07:57:15.151Z INFO  [rustowlc::core] analyzed one item of /Users/sachien/Desktop/tokio-rs/sync/src/main.rs
+2026-01-02T07:57:15.155Z INFO  [rustowlc::core] analyzed one item of /Users/sachien/Desktop/tokio-rs/sync/src/main.rs
+2026-01-02T07:57:15.177Z INFO  [rustowlc::core] analyzed one item of /Users/sachien/Desktop/tokio-rs/sync/src/main.rs
+2026-01-02T07:57:15.179Z INFO  [rustowlc::core] analyzed one item of /Users/sachien/Desktop/tokio-rs/sync/src/main.rs
+2026-01-02T07:57:15.179Z INFO  [rustowlc::core] analyzed one item of /Users/sachien/Desktop/tokio-rs/sync/src/main.rs
+2026-01-02T07:57:15.217Z INFO  [rustowlc::core] analyzed one item of /Users/sachien/Desktop/tokio-rs/sync/src/main.rs
 {"$message_type":"diagnostic","message":"1 warning emitted","code":null,"level":"warning","spans":[],"children":[],"rendered":"\u001b[0m\u001b[1m\u001b[33mwarning\u001b[0m\u001b[0m\u001b[1m: 1 warning emitted\u001b[0m\n\n"}
