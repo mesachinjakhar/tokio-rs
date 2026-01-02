@@ -1,16 +1,16 @@
-use tokio::sync::oneshot;
-use tokio::sync::mpsc;
-use tokio::net::TcpStream;
-use tokio::io::{self, AsyncWriteExt};
 use Command::Increment;
+use tokio::io::{self, AsyncWriteExt};
+use tokio::net::TcpStream;
+use tokio::sync::broadcast;
+use tokio::sync::mpsc;
+use tokio::sync::oneshot;
 
 enum Command {
     Increment,
 }
 
-
 #[tokio::main]
-async fn main() -> io::Result<()> {
+async fn main() {
     // let (tx, rx) = oneshot::channel();
 
     // tokio::spawn(async move {
@@ -47,10 +47,7 @@ async fn main() -> io::Result<()> {
     //     println!("got = {}", res);
     // }
 
-
-
-
-    // message passing 
+    // message passing
     // let mut socket = TcpStream::connect("www.example.com:1234").await?;
     // let(tx, mut rx) = mpsc::channel(100);
 
@@ -70,7 +67,6 @@ async fn main() -> io::Result<()> {
 
     // Ok(())
 
-
     // let (cmd_tx, mut cmd_rx) = mpsc::channel::<(Command, oneshot::Sender<u64>)>(100);
     // tokio::spawn(async move {
     //     let mut counter: u64 = 0;
@@ -87,7 +83,6 @@ async fn main() -> io::Result<()> {
     // });
 
     // let mut join_handles = vec![];
-
 
     // for _ in 0..10 {
     //     let cmd_tx = cmd_tx.clone();
@@ -108,20 +103,37 @@ async fn main() -> io::Result<()> {
 
     // Ok(())
 
-    let (tx,rx) = oneshot::channel::<u32>();
+    // let (tx,rx) = oneshot::channel::<u32>();
+
+    // tokio::spawn(async move {
+    //     drop(tx)
+    // });
+
+    // match rx.await {
+    //     Ok(_) => panic!("this does not happen"),
+    //     Err(_) => println!("the sender dropped")
+    // }
+
+    // Ok(())
+
+    // broadcast
+
+    let (tx, mut rx1) = broadcast::channel(16);
+    let mut rx2 = tx.subscribe();
 
     tokio::spawn(async move {
-        drop(tx)
+        assert_eq!(rx1.recv().await.unwrap(), 10);
+        assert_eq!(rx1.recv().await.unwrap(), 20);
     });
 
-    match rx.await {
-        Ok(_) => panic!("this does not happen"),
-        Err(_) => println!("the sender dropped")
-    }
+    tokio::spawn(async move {
+        assert_eq!(rx2.recv().await.unwrap(), 10);
+        assert_eq!(rx2.recv().await.unwrap(), 20);
+    });
 
-    Ok(())
+    tx.send(10).unwrap();
+    tx.send(20).unwrap();
 }
-
 
 // async fn some_computation2(i: u32) -> String {
 //     format!("the result of computation {}", i)
