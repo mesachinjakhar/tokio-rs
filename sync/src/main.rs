@@ -4,6 +4,7 @@ use tokio::net::TcpStream;
 use tokio::sync::broadcast;
 use tokio::sync::mpsc;
 use tokio::sync::oneshot;
+use tokio::sync::watch;
 
 enum Command {
     Increment,
@@ -133,6 +134,17 @@ async fn main() {
 
     tx.send(10).unwrap();
     tx.send(20).unwrap();
+
+    // watch
+    let (tx, mut rx) = watch::channel("v1");
+
+    tokio::spawn(async move {
+        tx.send("v2").unwrap();
+        tx.send("v3").unwrap();
+    });
+
+    rx.changed().await.unwrap();
+    println!("current = {}", *rx.borrow());
 }
 
 // async fn some_computation2(i: u32) -> String {
