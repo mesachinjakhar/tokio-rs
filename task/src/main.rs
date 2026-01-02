@@ -63,4 +63,18 @@ async fn main() {
     // this can be used give permission to other task to abort this task
     // we cant awwit on abort_handler
     let abort_handler = handle3.abort_handle();
+
+    // spawn_blocking create a blocking task on dedicated thread
+    task::spawn_blocking(|| {
+        // do some compute-heavy work or call synchronous code
+    });
+
+
+    // to run block_in_place, we have to use rt_multi_thread runtime instead of single thread
+    // let result = task::block_in_place(|| {
+    //     // do some compute-heavy work or call synchronous code
+    //     "blocking completed"
+    // });
+
+
 }
