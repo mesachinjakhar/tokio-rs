@@ -12,5 +12,13 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     // Await until the command completes
     let status = child.wait().await?;
     println!("the command exited with: {}", status);
+
+    let output = Command::new("echo").arg("hello").arg("world").output();
+
+    let output = output.await?;
+
+    assert!(output.status.success());
+    assert_eq!(output.stdout, b"hello world\n");
     Ok(())
+
 }
